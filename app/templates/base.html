@@ -22,6 +22,11 @@
     </header>
     <main>
         <div class="container">
+            {% with message = get_flashed_messages() %}
+            {% if message %}
+                <p class="lead">{{message}}</p>
+            {% endif %}
+            {% endwith %}
             {% block main %}{% endblock %}
         </div>
     </main>
